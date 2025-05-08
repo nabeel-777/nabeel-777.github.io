@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react';
+import { ArrowDown, Github, Linkedin } from 'lucide-react';
+import profileImage from './assets/profile.png';
 
 const Hero = () => {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -42,9 +43,6 @@ const Hero = () => {
     }
   }, []);
 
- // Site URL - Using window.location.origin to get the base URL
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
-
   return (
     <section
       id="home"
@@ -55,7 +53,7 @@ const Hero = () => {
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className="mb-6 w-32 h-32 mx-auto overflow-hidden rounded-full border-4 border-white dark:border-gray-800 shadow-xl">
           <img
-            src={`${siteUrl}/files/profile.png`}
+            src={profileImage}
             alt="Nabeel S"
             className="w-full h-full object-cover"
           />
@@ -104,7 +102,7 @@ const Hero = () => {
 
         <div className="mt-12 flex justify-center space-x-6">
           <a
-            href="https://github.com"
+            href="https://github.com/nabeel-777"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300"
@@ -121,15 +119,7 @@ const Hero = () => {
           >
             <Linkedin className="w-6 h-6" />
           </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-6 h-6" />
-          </a>
+
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
