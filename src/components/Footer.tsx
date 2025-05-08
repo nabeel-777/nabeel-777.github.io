@@ -72,7 +72,7 @@ const Footer = () => {
             <a href="#" className="hover:text-blue-400 transition-colors duration-300">Terms of Service</a>
             <a href="#" className="hover:text-blue-400 transition-colors duration-300">Cookie Policy</a>
             <div className="flex items-center">
-              Made with <Heart className="w-4 h-4 text-red-500 mx-1" /> by Nabeel S
+              Made with <Heart className="w-4 h-4 text-red-500 mx-1" />
             </div>
           </div>
         </div>
