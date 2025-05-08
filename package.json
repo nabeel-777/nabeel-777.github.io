@@ -3,7 +3,7 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "homepage": "https://nabeel-777.github.io/portfolio/",
+    "homepage": "https://nabeel-777.github.io",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
