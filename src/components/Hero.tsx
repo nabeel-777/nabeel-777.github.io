@@ -42,6 +42,9 @@ const Hero = () => {
     }
   }, []);
 
+ // Site URL - Using window.location.origin to get the base URL
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : '';
+
   return (
     <section
       id="home"
@@ -52,7 +55,7 @@ const Hero = () => {
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className="mb-6 w-32 h-32 mx-auto overflow-hidden rounded-full border-4 border-white dark:border-gray-800 shadow-xl">
           <img
-            src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=256"
+            src={`${siteUrl}/portfolio/files/profile.png`}
             alt="Nabeel S"
             className="w-full h-full object-cover"
           />
