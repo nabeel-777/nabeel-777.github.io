@@ -103,10 +103,10 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
                   <a 
-                    href="mailto:hello@johndoe.com" 
+                    href="mailto:nabeel007.sa@gmail.com" 
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                   >
-                    hello@johndoe.com
+                    nabeel007.sa@gmail.com
                   </a>
                 </div>
               </div>
@@ -120,10 +120,10 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
                   <a 
-                    href="tel:+11234567890" 
+                    href="tel:+918891349011" 
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                   >
-                    +1 (123) 456-7890
+                    +91 8891349011
                   </a>
                 </div>
               </div>
@@ -137,7 +137,7 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Location</h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    San Francisco, CA
+                    Kollam, Kerala, India
                   </p>
                 </div>
               </div>

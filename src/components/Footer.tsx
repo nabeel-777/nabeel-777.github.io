@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <div className="font-bold text-2xl text-blue-400 mb-2">Nabeel S</div>
             <p className="text-gray-400 max-w-md">
-              Creating beautiful digital experiences through clean code and thoughtful design.
+              Crafting high-performance WordPress solutions through custom development and optimization.
             </p>
           </div>
 
@@ -33,7 +33,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nabeel-s-ptpm/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 transition-colors duration-300"

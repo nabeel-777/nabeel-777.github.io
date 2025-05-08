@@ -69,7 +69,7 @@ const Hero = () => {
           ref={subtitleRef}
           className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
         >
-         Passionate WordPress Developer crafting dynamic, user-centric web experiences that deliver results.
+         WordPress Developer with expertise in custom themes, plugins, and performance optimization.
         </p>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -110,7 +110,7 @@ const Hero = () => {
             <Github className="w-6 h-6" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/nabeel-s-ptpm/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300"

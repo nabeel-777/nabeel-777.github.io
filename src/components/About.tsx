@@ -8,47 +8,29 @@ const About = () => {
   const skills = [
     { name: 'WordPress', percentage: 95 },
     { name: 'PHP', percentage: 90 },
-    { name: 'JavaScript', percentage: 90 },
-    { name: 'jQuery', percentage: 90 },
-    { name: 'AJAX', percentage: 90 },
+    { name: 'MySQL', percentage: 90 },
+    { name: 'JavaScript', percentage: 85 },
+    { name: 'jQuery', percentage: 85 },
+    { name: 'AJAX', percentage: 85 },
     { name: 'HTML/CSS', percentage: 85 },
-    { name: 'React', percentage: 85 },
-    { name: 'Node.js', percentage: 80 },
+    { name: 'React', percentage: 80 },
   ];
 
   const experiences = [
     {
-      title: 'Senior Frontend Developer',
-      company: 'TechCorp Inc.',
-      period: 'Jan 2021 - Present',
-      description: 'Leading the frontend development team in creating modern, responsive web applications. Implemented new design system that improved development speed by 35%.'
-    },
-    {
-      title: 'Frontend Developer',
-      company: 'WebSolutions Ltd.',
-      period: 'Mar 2018 - Dec 2020',
-      description: 'Developed and maintained client websites using React, TypeScript, and modern CSS. Collaborated with designers to implement pixel-perfect UI components.'
-    },
-    {
-      title: 'Junior Web Developer',
-      company: 'CreativeMinds Agency',
-      period: 'Jun 2016 - Feb 2018',
-      description: 'Built responsive websites for various clients. Worked on improving website performance and accessibility.'
+      title: 'WordPress Developer',
+      company: 'Midnay Webware Solutions',
+      period: 'Feb 2022 - Present',
+      description: 'Developed custom WordPress themes and plugins, integrated APIs including payment gateways, and optimized front-end and back-end performance. Implemented advanced security protocols and reduced page load time by 40% through MySQL query optimization.'
     }
   ];
 
   const education = [
     {
-      degree: 'M.S. in Computer Science',
-      institution: 'Tech University',
-      period: '2014 - 2016',
-      description: 'Specialized in Human-Computer Interaction and Web Technologies.'
-    },
-    {
-      degree: 'B.S. in Computer Science',
-      institution: 'State University',
-      period: '2010 - 2014',
-      description: 'Graduated with honors. Relevant coursework included Web Development, UI/UX Design, and Software Engineering.'
+      degree: 'Bachelor of Computer Applications',
+      institution: 'MG University, Kottayam, India',
+      period: 'Aug 2017 - May 2018',
+      description: 'Completed Bachelor\'s degree in Computer Applications with focus on programming and web development.'
     }
   ];
 
@@ -59,9 +41,9 @@ const About = () => {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">About Me</h2>
           <div className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-gray-700 dark:text-gray-300 text-lg">
-            I'm a passionate frontend developer with over 5 years of experience creating beautiful, functional web experiences.
-            I specialize in building responsive, accessible websites using modern technologies like React, TypeScript, and Tailwind CSS.
-            My goal is to create digital experiences that are not only visually appealing but also intuitive and performant.
+            Highly skilled WordPress Developer with 3+ years of experience in both front-end and back-end WordPress development. 
+            Expertise in building custom themes and plugins, integrating third-party APIs, and optimizing both server-side and client-side performance. 
+            Strong focus on creating dynamic, user-friendly websites with high levels of customization.
           </p>
         </div>
 
@@ -75,12 +57,12 @@ const About = () => {
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Nabeel S</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">Frontend Developer</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">WordPress Developer</p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">React</span>
-                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">TypeScript</span>
-                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Tailwind CSS</span>
-                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Node.js</span>
+                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">WordPress</span>
+                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">PHP</span>
+                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">JavaScript</span>
+                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">MySQL</span>
                 </div>
                 <a
                   href="#"
