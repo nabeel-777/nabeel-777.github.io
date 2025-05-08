@@ -59,10 +59,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-400">
-            <a href="#" className="hover:text-blue-400 transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="hover:text-blue-400 transition-colors duration-300">Terms of Service</a>
-            <a href="#" className="hover:text-blue-400 transition-colors duration-300">Cookie Policy</a>
-            <div className="flex items-center">
+           <div className="flex items-center">
               Made with <Heart className="w-4 h-4 text-red-500 mx-1" />
             </div>
           </div>
