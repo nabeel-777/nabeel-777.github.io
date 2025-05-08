@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Download } from 'lucide-react';
 import SkillBar from './SkillBar';
+import Resume from '../assets/NABEEL S - WordPress Developer Resume.pdf';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState<'skills' | 'experience' | 'education'>('skills');
@@ -65,7 +66,7 @@ const About = () => {
                   <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">MySQL</span>
                 </div>
                 <a
-                  href="#"
+                  href={Resume}
                   className="flex items-center justify-center gap-2 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors duration-300"
                 >
                   <Download className="w-4 h-4" />

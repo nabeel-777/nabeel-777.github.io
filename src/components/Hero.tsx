@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { ArrowDown, Github, Linkedin } from 'lucide-react';
-import profileImage from './assets/profile.png';
+import profileImage from '../assets/profile.png';
 
 const Hero = () => {
   const headingRef = useRef<HTMLHeadingElement>(null);
