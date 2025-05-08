@@ -50,11 +50,11 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2">
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-colors duration-300">
-              <img
+              {/* <img
                 src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Nabeel S"
                 className="w-full h-auto"
-              />
+              /> */}
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Nabeel S</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">WordPress Developer</p>
