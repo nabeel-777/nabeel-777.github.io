@@ -54,7 +54,7 @@ const Hero = () => {
         <div className="mb-6 w-32 h-32 mx-auto overflow-hidden rounded-full border-4 border-white dark:border-gray-800 shadow-xl">
           <img
             src={profileImage}
-            alt="Nabeel S"
+            alt="Nabeel Sainudeen"
             className="w-full h-full object-cover"
           />
         </div>
@@ -63,7 +63,7 @@ const Hero = () => {
           ref={headingRef}
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
         >
-          Hi, I'm <span className="text-blue-600 dark:text-blue-400">Nabeel S</span>
+          Hi, I'm <span className="text-blue-600 dark:text-blue-400">Nabeel Sainudeen</span>
         </h1>
 
         <p

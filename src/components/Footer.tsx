@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
           <div className="mb-6 md:mb-0">
-            <div className="font-bold text-2xl text-blue-400 mb-2">Nabeel S</div>
+            <div className="font-bold text-2xl text-blue-400 mb-2">Nabeel Sainudeen</div>
             <p className="text-gray-400 max-w-md">
               Crafting high-performance WordPress solutions through custom development and optimization.
             </p>
@@ -55,7 +55,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 mb-4 md:mb-0">
-            © {currentYear} Nabeel S. All rights reserved.
+            © {currentYear} Nabeel Sainudeen. All rights reserved.
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-gray-400">

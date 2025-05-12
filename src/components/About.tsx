@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Download } from 'lucide-react';
 import SkillBar from './SkillBar';
-import Resume from '../assets/NABEEL S - WordPress Developer Resume.pdf';
+import Resume from '../assets/Nabeel-Sainudeen-WordPress-Developer-Resume.pdf';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState<'skills' | 'experience' | 'education'>('skills');
@@ -53,11 +53,11 @@ const About = () => {
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-colors duration-300">
               {/* <img
                 src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Nabeel S"
+                alt="Nabeel Sainudeen"
                 className="w-full h-auto"
               /> */}
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Nabeel S</h3>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Nabeel Sainudeen</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">WordPress Developer</p>
                 <div className="flex flex-wrap gap-2 mb-6">
                 <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">WordPress</span>

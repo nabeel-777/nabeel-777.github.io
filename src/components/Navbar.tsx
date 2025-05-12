@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 font-bold text-xl text-blue-600 dark:text-blue-400">
             <a href="#home" className="flex items-center gap-2">
-              Nabeel S
+              Nabeel Sainudeen
             </a>
           </div>
 
