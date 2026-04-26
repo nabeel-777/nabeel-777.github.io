@@ -1,24 +1,46 @@
-// ===================================
-// Smooth Scroll Navigation
-// ===================================
 document.addEventListener('DOMContentLoaded', function() {
+    // ===================================
+    // Theme Management
+    // ===================================
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
     
-    // Get all navigation links
+    // Check for saved theme or system preference
+    const savedTheme = localStorage.getItem('theme') || 
+                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    setTheme(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
+
+    function setTheme(theme) {
+        body.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        
+        // Update body class for backward compatibility if needed
+        body.className = `${theme}-mode`;
+    }
+
+    // ===================================
+    // Smooth Scroll Navigation
+    // ===================================
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
+    const header = document.querySelector('.header');
     
-    // Smooth scroll to section on click
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
             
             const targetSection = document.querySelector(targetId);
-            
             if (targetSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
+                const headerHeight = header.offsetHeight;
                 const targetPosition = targetSection.offsetTop - headerHeight;
                 
                 window.scrollTo({
@@ -26,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth'
                 });
                 
-                // Close mobile menu if open
+                // Close mobile menu
                 const nav = document.getElementById('nav');
                 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
                 nav.classList.remove('active');
@@ -34,19 +56,28 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // ===================================
-    // Active Navigation State on Scroll
+    // Active Nav & Header Scroll State
     // ===================================
-    function updateActiveNavLink() {
-        const scrollPosition = window.scrollY + 100;
+    function handleScroll() {
+        const scrollPosition = window.scrollY;
         
+        // Header shadow on scroll
+        if (scrollPosition > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        // Active link update
+        const scrollWithOffset = scrollPosition + 150;
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
             
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            if (scrollWithOffset >= sectionTop && scrollWithOffset < sectionTop + sectionHeight) {
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${sectionId}`) {
@@ -55,10 +86,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+
+        // Scroll to top button visibility
+        const scrollTopBtn = document.getElementById('scrollTop');
+        if (scrollPosition > 500) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
     }
     
-    window.addEventListener('scroll', updateActiveNavLink);
-    
+    window.addEventListener('scroll', handleScroll);
+
+    // ===================================
+    // Reveal Animations (Intersection Observer)
+    // ===================================
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    // Initial classes for reveal
+    const sectionsToReveal = document.querySelectorAll('section, .skill-card, .project-card, .experience-card');
+    sectionsToReveal.forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        revealObserver.observe(el);
+    });
+
     // ===================================
     // Mobile Menu Toggle
     // ===================================
@@ -69,147 +132,56 @@ document.addEventListener('DOMContentLoaded', function() {
         nav.classList.toggle('active');
         this.classList.toggle('active');
     });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-            nav.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-        }
-    });
-    
+
     // ===================================
-    // Scroll to Top Button
-    // ===================================
-    const scrollTopBtn = document.getElementById('scrollTop');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            scrollTopBtn.classList.add('visible');
-        } else {
-            scrollTopBtn.classList.remove('visible');
-        }
-    });
-    
-    scrollTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // ===================================
-    // Contact Form - Web3Forms Integration
+    // Contact Form Handling
     // ===================================
     const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-    
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        formData.append("access_key", "17bf0746-335d-40d4-bc09-5467fc4ebca1");
-        
-        // Show loading state
-        const submitBtn = contactForm.querySelector('.btn-submit');
-        const originalBtnText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        // Hide previous messages
-        formMessage.style.display = 'none';
-        formMessage.classList.remove('success', 'error');
-        
-        try {
-            // Send to Web3Forms API
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formMessage = document.getElementById('formMessage');
+            const submitBtn = contactForm.querySelector('.btn-submit');
+            const originalBtnText = submitBtn.innerHTML;
             
-            const data = await response.json();
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
             
-            if (data.success) {
-                // Success
-                formMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                formMessage.classList.add('success');
-                formMessage.style.display = 'block';
+            const formData = new FormData(contactForm);
+            formData.append("access_key", "17bf0746-335d-40d4-bc09-5467fc4ebca1");
+            
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
                 
-                // Reset form
-                contactForm.reset();
-            } else {
-                // Error from API
-                formMessage.textContent = 'Oops! Something went wrong. Please try again.';
-                formMessage.classList.add('error');
-                formMessage.style.display = 'block';
-            }
-        } catch (error) {
-            // Network or other error
-            formMessage.textContent = 'Network error. Please check your connection and try again.';
-            formMessage.classList.add('error');
-            formMessage.style.display = 'block';
-        } finally {
-            // Restore button state
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
-        }
-    });
-    
-    // ===================================
-    // Form Input Validation
-    // ===================================
-    const formInputs = contactForm.querySelectorAll('input, textarea');
-    
-    formInputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            if (this.hasAttribute('required') && !this.value.trim()) {
-                this.style.borderColor = '#dc3545';
-            } else {
-                this.style.borderColor = '';
-            }
-        });
-        
-        input.addEventListener('input', function() {
-            if (this.style.borderColor === 'rgb(220, 53, 69)') {
-                this.style.borderColor = '';
-            }
-        });
-    });
-    
-    // ===================================
-    // Hero Buttons Smooth Scroll
-    // ===================================
-    const heroButtons = document.querySelectorAll('.hero-buttons .btn');
-    
-    heroButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                const targetSection = document.querySelector(href);
-                if (targetSection) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = targetSection.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                if (data.success) {
+                    formMessage.textContent = 'Message sent successfully!';
+                    formMessage.className = 'form-message success';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
                 }
+            } catch (error) {
+                formMessage.textContent = 'Oops! Something went wrong. Please try again.';
+                formMessage.className = 'form-message error';
+            } finally {
+                formMessage.style.display = 'block';
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
             }
         });
-    });
-    
+    }
+
     // ===================================
-    // Initialize on Load
+    // Initialize
     // ===================================
-    updateActiveNavLink();
+    handleScroll();
 });
 
-// ===================================
-// Prevent Form Resubmission on Refresh
-// ===================================
+// Prevent Form Resubmission
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
-}
+}
