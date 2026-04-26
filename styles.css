@@ -736,6 +736,12 @@ section {
     opacity: 0.4;
 }
 
+.h-captcha {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
 .contact-info {
     display: flex;
     flex-direction: column;
