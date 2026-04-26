@@ -147,6 +147,16 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
+            const hCaptchaResponse = contactForm.querySelector('[name="h-captcha-response"]').value;
+            if (!hCaptchaResponse) {
+                formMessage.textContent = 'Please complete the hCaptcha.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                return;
+            }
+
             const formData = new FormData(contactForm);
             formData.append("access_key", "17bf0746-335d-40d4-bc09-5467fc4ebca1");
             
@@ -171,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 formMessage.style.display = 'block';
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.disabled = false;
+                if (typeof hcaptcha !== 'undefined') hcaptcha.reset();
             }
         });
     }
