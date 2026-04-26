@@ -736,19 +736,6 @@ section {
     opacity: 0.4;
 }
 
-.h-captcha {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    min-height: 78px; /* Standard hCaptcha height */
-}
-
-/* Ensure the widget doesn't overflow on small screens */
-.h-captcha > iframe {
-    max-width: 100% !important;
-}
-
 .form-message {
     padding: 16px;
     border-radius: 12px;
