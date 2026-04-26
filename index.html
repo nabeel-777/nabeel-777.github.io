@@ -26,20 +26,26 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap"
             rel="stylesheet"
+        />
+
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
 
         <!-- Stylesheet -->
         <link rel="stylesheet" href="styles.css" />
     </head>
-    <body>
+    <body class="light-mode">
         <!-- Header -->
         <header class="header" id="header">
             <div class="container">
                 <div class="header-content">
                     <div class="logo">
-                        <h2>Nabeel Sainudeen</h2>
+                        <h2 class="gradient-text">Nabeel Sainudeen</h2>
                         <p class="logo-subtitle">WordPress Developer</p>
                     </div>
 
@@ -52,11 +58,16 @@
                         <a href="#contact" class="nav-link">Contact</a>
                         <a
                             href="cv/NABEEL-SAINUDEEN-Resume.pdf"
-                            class="btn btn-primary btn-download"
+                            class="btn btn-resume"
                             target="_blank"
                             rel="noopener noreferrer"
-                            >View Resume</a
                         >
+                            <i class="fa-solid fa-file-pdf"></i> Resume
+                        </a>
+                        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+                            <i class="fa-solid fa-moon"></i>
+                            <i class="fa-solid fa-sun"></i>
+                        </button>
                     </nav>
 
                     <button
@@ -107,28 +118,37 @@
                             with hands-on experience building enterprise-level
                             WordPress plugins, REST endpoints, and integrations
                             with third-party platforms such as AWS, Zoho
-                            Billing, Razorpay, and custom AI APIs. I focus on
-                            writing secure, modular, and maintainable code
-                            aligned with WordPress coding standards.
+                            Billing, Razorpay, and custom AI APIs.
+                        </p>
+                        <p>
+                            I focus on writing secure, modular, and maintainable code
+                            aligned with WordPress coding standards, ensuring high performance
+                            and scalability for every project.
                         </p>
                     </div>
                     <div class="about-facts">
                         <div class="fact-card">
-                            <span class="fact-icon">📍</span>
+                            <div class="fact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
                             <div class="fact-content">
                                 <h4>Location</h4>
                                 <p>Kollam, India</p>
                             </div>
                         </div>
                         <div class="fact-card">
-                            <span class="fact-icon">💼</span>
+                            <div class="fact-icon">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
                             <div class="fact-content">
                                 <h4>Experience</h4>
                                 <p>3+ Years</p>
                             </div>
                         </div>
                         <div class="fact-card">
-                            <span class="fact-icon">💻</span>
+                            <div class="fact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
                             <div class="fact-content">
                                 <h4>Email</h4>
                                 <p>nabeel007.sa@gmail.com</p>
@@ -142,10 +162,12 @@
         <!-- Skills Section -->
         <section class="skills" id="skills">
             <div class="container">
-                <h2 class="section-title">Skills & Technologies</h2>
+                <h2 class="section-title">Expertise</h2>
                 <div class="skills-grid">
                     <div class="skill-card">
-                        <h3 class="skill-title">WordPress</h3>
+                        <h3 class="skill-title">
+                            <i class="fa-brands fa-wordpress"></i> WordPress
+                        </h3>
                         <ul class="skill-list">
                             <li>Custom Plugins</li>
                             <li>Themes</li>
@@ -157,52 +179,63 @@
                     </div>
 
                     <div class="skill-card">
-                        <h3 class="skill-title">Backend</h3>
+                        <h3 class="skill-title">
+                            <i class="fa-solid fa-code"></i> Backend
+                        </h3>
                         <ul class="skill-list">
-                            <li>PHP</li>
+                            <li>PHP 8.x</li>
                             <li>MySQL</li>
-                            <li>Object-Oriented Programming</li>
+                            <li>OOP</li>
+                            <li>Design Patterns</li>
                         </ul>
                     </div>
 
                     <div class="skill-card">
-                        <h3 class="skill-title">APIs & SaaS</h3>
+                        <h3 class="skill-title">
+                            <i class="fa-solid fa-cloud"></i> APIs & SaaS
+                        </h3>
                         <ul class="skill-list">
                             <li>AWS S3</li>
                             <li>Zoho Billing</li>
-                            <li>Razorpay SDK</li>
+                            <li>Razorpay</li>
                             <li>OAuth2.0</li>
                             <li>OpenRouter AI</li>
                         </ul>
                     </div>
 
                     <div class="skill-card">
-                        <h3 class="skill-title">Frontend</h3>
+                        <h3 class="skill-title">
+                            <i class="fa-solid fa-layer-group"></i> Frontend
+                        </h3>
                         <ul class="skill-list">
-                            <li>JavaScript</li>
-                            <li>jQuery</li>
-                            <li>HTML5</li>
-                            <li>CSS3</li>
+                            <li>JavaScript (ES6+)</li>
                             <li>React</li>
+                            <li>jQuery</li>
+                            <li>HTML5/CSS3</li>
                         </ul>
                     </div>
 
                     <div class="skill-card">
-                        <h3 class="skill-title">Tools</h3>
+                        <h3 class="skill-title">
+                            <i class="fa-solid fa-toolbox"></i> Tools
+                        </h3>
                         <ul class="skill-list">
                             <li>Git</li>
                             <li>Postman</li>
                             <li>Webpack</li>
+                            <li>Composer</li>
                         </ul>
                     </div>
 
                     <div class="skill-card">
-                        <h3 class="skill-title">Security & Performance</h3>
+                        <h3 class="skill-title">
+                            <i class="fa-solid fa-shield-halved"></i> Security
+                        </h3>
                         <ul class="skill-list">
                             <li>CSRF Protection</li>
                             <li>Nonce Validation</li>
-                            <li>Caching</li>
-                            <li>GDPR Compliance</li>
+                            <li>Data Sanitization</li>
+                            <li>GDPR</li>
                         </ul>
                     </div>
                 </div>
@@ -212,103 +245,75 @@
         <!-- Projects Section -->
         <section class="projects" id="projects">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title">Case Studies</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">
-                                Enterprise Plugin Framework
-                            </h3>
-                        </div>
-                        <p class="project-description">
-                            Built a modular plugin suite powering 5+ enterprise
-                            deployments with automated authentication, cloud
-                            storage, analytics, and membership integration.
-                        </p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Reduced maintenance time &
-                            improved page load speed by around 40%.
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-badge">PHP</span>
-                            <span class="tech-badge">WordPress</span>
-                            <span class="tech-badge">REST API</span>
-                            <span class="tech-badge">AWS S3</span>
-                        </div>
-                    </div>
-
-                    <!-- REPLACED ZOHO PROJECT WITH AI ASSISTANT PROJECT -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">
-                                AI Article Assistant Plugin
-                            </h3>
-                        </div>
-                        <p class="project-description">
-                            Developed a WordPress plugin that connects to an AI
-                            API to provide real-time summaries and explanations
-                            of articles through an on-page assistant widget.
-                        </p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Helped readers understand
-                            long-form content faster and reduced repetitive
-                            support queries for the content team.
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-badge">PHP</span>
-                            <span class="tech-badge">WordPress</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">AI API</span>
+                        <div class="project-content">
+                            <h3 class="project-title">Enterprise Plugin Framework</h3>
+                            <p class="project-description">
+                                Built a modular plugin suite powering 5+ enterprise deployments with automated authentication, cloud storage, and analytics.
+                            </p>
+                            <div class="project-impact">
+                                <strong><i class="fa-solid fa-chart-line"></i> Impact:</strong> Reduced maintenance time & improved page load speed by 40%.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">REST API</span>
+                                <span class="tech-badge">AWS S3</span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">
-                                Razorpay Donations Plugin
-                            </h3>
-                        </div>
-                        <p class="project-description">
-                            Created a custom donation plugin with Razorpay
-                            payment gateway integration, supporting recurring
-                            donations, custom amounts, and detailed reporting.
-                        </p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Enabled a smooth, reliable
-                            donation flow with recurring payments and clearer
-                            visibility into donation activity for the client.
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-badge">PHP</span>
-                            <span class="tech-badge">Razorpay SDK</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">JavaScript</span>
+                        <div class="project-content">
+                            <h3 class="project-title">AI Article Assistant</h3>
+                            <p class="project-description">
+                                Developed a WordPress plugin connecting to AI APIs to provide real-time summaries and explanations via an on-page widget.
+                            </p>
+                            <div class="project-impact">
+                                <strong><i class="fa-solid fa-microchip"></i> Impact:</strong> Enhanced reader engagement and reduced support queries.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">AI API</span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">
-                                GDPR Consent & Reporting System
-                            </h3>
+                        <div class="project-content">
+                            <h3 class="project-title">Razorpay Recurring Donations</h3>
+                            <p class="project-description">
+                                Custom donation plugin with Razorpay gateway, supporting recurring payments and detailed compliance reporting.
+                            </p>
+                            <div class="project-impact">
+                                <strong><i class="fa-solid fa-indian-rupee-sign"></i> Impact:</strong> Enabled reliable donation flows with clearer visibility.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">Razorpay SDK</span>
+                                <span class="tech-badge">MySQL</span>
+                            </div>
                         </div>
-                        <p class="project-description">
-                            Built a GDPR compliance plugin with cookie consent
-                            management, data tracking, user data export, and
-                            compliance reporting for a client’s WordPress
-                            ecosystem.
-                        </p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Centralized consent and
-                            audit reporting across two high-traffic sites for a
-                            single client, simplifying compliance checks and
-                            data requests.
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-badge">PHP</span>
-                            <span class="tech-badge">WordPress</span>
-                            <span class="tech-badge">REST API</span>
-                            <span class="tech-badge">Security</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">GDPR Compliance System</h3>
+                            <p class="project-description">
+                                Centralized consent and audit reporting across high-traffic sites, simplifying compliance checks and data requests.
+                            </p>
+                            <div class="project-impact">
+                                <strong><i class="fa-solid fa-user-shield"></i> Impact:</strong> Simplified compliance auditing across multiple enterprise sites.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">Security</span>
+                                <span class="tech-badge">REST API</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -318,41 +323,19 @@
         <!-- Experience Section -->
         <section class="experience" id="experience">
             <div class="container">
-                <h2 class="section-title">Work Experience</h2>
+                <h2 class="section-title">Journey</h2>
                 <div class="experience-content">
                     <div class="experience-card">
                         <div class="experience-header">
-                            <h3 class="experience-title">
-                                WordPress Developer
-                            </h3>
-                            <span class="experience-company"
-                                >Midnay Webware Solutions</span
-                            >
-                            <span class="experience-period"
-                                >Feb 2022 – Present</span
-                            >
+                            <h3 class="experience-title">WordPress Developer</h3>
+                            <div class="experience-company">Midnay Webware Solutions</div>
+                            <div class="experience-period">Feb 2022 – Present</div>
                         </div>
                         <ul class="experience-list">
-                            <li>
-                                Built and maintained production-grade plugins
-                                used across enterprise systems
-                            </li>
-                            <li>
-                                Integrated SaaS platforms including AWS S3, Zoho
-                                Billing, Razorpay and AI APIs
-                            </li>
-                            <li>
-                                Developed GDPR-compliant tracking, REST
-                                reporting and performance improvements
-                            </li>
-                            <li>
-                                Collaborated with cross-functional teams to
-                                deliver scalable WordPress solutions
-                            </li>
-                            <li>
-                                Implemented security best practices including
-                                CSRF protection and nonce validation
-                            </li>
+                            <li>Built production-grade plugins for enterprise systems.</li>
+                            <li>Integrated SaaS platforms like AWS S3, Zoho Billing, and Razorpay.</li>
+                            <li>Developed GDPR-compliant tracking and REST reporting systems.</li>
+                            <li>Implemented security best practices including CSRF and nonce validation.</li>
                         </ul>
                     </div>
                 </div>
@@ -362,47 +345,25 @@
         <!-- Contact Section -->
         <section class="contact" id="contact">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title">Let's Connect</h2>
                 <div class="contact-content">
                     <div class="contact-form-wrapper">
                         <form class="contact-form" id="contactForm">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                />
+                                <input type="text" id="name" name="name" placeholder="Your Name" required />
                             </div>
-
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                />
+                                <input type="email" id="email" name="email" placeholder="email@example.com" required />
                             </div>
-
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    rows="5"
-                                    required
-                                ></textarea>
+                                <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
                             </div>
-
-                            <button
-                                type="submit"
-                                class="btn btn-primary btn-submit"
-                            >
-                                Send Message
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                Send Message <i class="fa-solid fa-paper-plane"></i>
                             </button>
-
                             <div class="form-message" id="formMessage"></div>
                         </form>
                     </div>
@@ -410,30 +371,17 @@
                     <div class="contact-info">
                         <h3>Contact Information</h3>
                         <div class="contact-links">
-                            <a
-                                href="mailto:nabeel007.sa@gmail.com"
-                                class="contact-link"
-                            >
-                                <span class="contact-icon">✉️</span>
+                            <a href="mailto:nabeel007.sa@gmail.com" class="contact-link">
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                                 <span>nabeel007.sa@gmail.com</span>
                             </a>
-                            <a
-                                href="https://linkedin.com/in/nabeel-s-ptpm"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="contact-link"
-                            >
-                                <span class="contact-icon">🔗</span>
-                                <span>linkedin.com/in/nabeel-s-ptpm</span>
+                            <a href="https://linkedin.com/in/nabeel-s-ptpm" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <span>LinkedIn Profile</span>
                             </a>
-                            <a
-                                href="https://github.com/nabeel-777"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="contact-link"
-                            >
-                                <span class="contact-icon">💻</span>
-                                <span>github.com/nabeel-777</span>
+                            <a href="https://github.com/nabeel-777" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+                                <span>GitHub Repository</span>
                             </a>
                         </div>
                     </div>
@@ -444,13 +392,17 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <p>&copy; 2025 Nabeel Sainudeen. All rights reserved.</p>
+                <p>&copy; 2025 Nabeel Sainudeen. Crafted with Passion.</p>
+                <div class="social-links" style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+                    <a href="https://linkedin.com/in/nabeel-s-ptpm" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/nabeel-777" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
             </div>
         </footer>
 
         <!-- Scroll to Top Button -->
         <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-            ↑
+            <i class="fa-solid fa-arrow-up"></i>
         </button>
 
         <!-- JavaScript -->
