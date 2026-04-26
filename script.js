@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const formData = new FormData(contactForm);
             formData.append("access_key", "17bf0746-335d-40d4-bc09-5467fc4ebca1");
+            formData.append("h-captcha-response", hCaptchaResponse);
             
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
