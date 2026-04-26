@@ -1,0 +1,22 @@
+{
+  "name": "nabeel-777.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./styles.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:nabeel-777/nabeel-777.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "tailwindcss": "^4.2.4"
+  }
+}
